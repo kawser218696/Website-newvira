@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://newviralvideo.eu.cc/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 5
+
+# Disallow admin or utility paths (add as needed)
+Disallow: /search?
+Disallow: /api/
