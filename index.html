@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NewViralVideo – Today's Hottest Trending Videos & Viral News</title>
+  <meta name="description" content="NewViralVideo is your #1 source for the latest trending videos, viral clips, breaking video news, and internet-defining moments from around the world. Updated daily." />
+  <meta name="keywords" content="viral videos, trending videos, new viral video, video news, funny videos, breaking news videos, internet viral, top videos today" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="NewViralVideo" />
+  <link rel="canonical" href="https://newviralvideo.eu.cc/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="NewViralVideo – Today's Hottest Trending Videos" />
+  <meta property="og:description" content="Your #1 source for trending videos, viral clips and breaking video news from around the world." />
+  <meta property="og:url" content="https://newviralvideo.eu.cc/" />
+  <meta property="og:site_name" content="NewViralVideo" />
+  <meta property="og:image" content="https://newviralvideo.eu.cc/og-image.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NewViralVideo – Today's Hottest Trending Videos" />
+  <meta name="twitter:description" content="Your #1 source for trending videos, viral clips and breaking video news." />
+  <meta name="twitter:image" content="https://newviralvideo.eu.cc/og-image.jpg" />
+
+  <!-- Structured Data: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "NewViralVideo",
+    "url": "https://newviralvideo.eu.cc/",
+    "description": "Your #1 source for today's hottest trending videos and viral news from around the world.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://newviralvideo.eu.cc/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "NewViralVideo",
+    "url": "https://newviralvideo.eu.cc/",
+    "logo": "https://newviralvideo.eu.cc/logo.png",
+    "sameAs": []
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0a0a0c;
+      --surface: #111116;
+      --card: #16161d;
+      --border: #222230;
+      --red: #ff2d2d;
+      --red-glow: rgba(255,45,45,0.35);
+      --orange: #ff6b00;
+      --yellow: #ffd60a;
+      --text: #f0f0f5;
+      --muted: #888898;
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-cond: 'Barlow Condensed', sans-serif;
+      --font-body: 'Barlow', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* ── CUSTOM CURSOR ── */
+    .cursor {
+      position: fixed;
+      width: 12px; height: 12px;
+      background: var(--red);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%,-50%);
+      transition: transform 0.08s ease, width 0.2s, height 0.2s, background 0.2s;
+      mix-blend-mode: difference;
+    }
+    .cursor-ring {
+      position: fixed;
+      width: 36px; height: 36px;
+      border: 1.5px solid var(--red);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%,-50%);
+      transition: transform 0.18s ease, border-color 0.2s;
+      opacity: 0.6;
+    }
+    body:hover .cursor { opacity: 1; }
+
+    /* ── NOISE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9000;
+      opacity: 0.4;
+    }
+
+    /* ── LOADER ── */
+    #loader {
+      position: fixed; inset: 0;
+      background: #000;
+      z-index: 9990;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 20px;
+      transition: opacity 0.7s ease, visibility 0.7s ease;
+    }
+    #loader.hide { opacity: 0; visibility: hidden; }
+    .loader-logo {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      letter-spacing: 0.05em;
+      color: #fff;
+      animation: loaderPulse 1s ease-in-out infinite alternate;
+    }
+    .loader-logo span { color: var(--red); }
+    .loader-bar {
+      width: 220px; height: 2px;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .loader-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--red), var(--orange));
+      width: 0%;
+      animation: loadFill 1.4s cubic-bezier(0.4,0,0.2,1) forwards;
+    }
+    @keyframes loaderPulse { from { opacity: 0.6; } to { opacity: 1; } }
+    @keyframes loadFill { to { width: 100%; } }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 800;
+      padding: 0 5vw;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(10,10,12,0.7);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      animation: slideDown 0.6s 1.6s both;
+    }
+    @keyframes slideDown { from { transform: translateY(-100%); opacity: 0; } to { transform: none; opacity: 1; } }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--red); }
+
+    .nav-links {
+      display: flex; gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--font-cond);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--red); }
+
+    .nav-cta {
+      background: var(--red);
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 2px;
+      transition: background 0.2s, box-shadow 0.2s !important;
+    }
+    .nav-cta:hover {
+      background: var(--orange) !important;
+      box-shadow: 0 0 18px var(--red-glow);
+      color: #fff !important;
+    }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: var(--text); transition: 0.3s; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 100px 5vw 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(255,45,45,0.12) 0%, transparent 70%),
+                  radial-gradient(ellipse 50% 40% at 10% 80%, rgba(255,107,0,0.07) 0%, transparent 60%);
+    }
+
+    .hero-grid-lines {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 700px;
+      animation: heroReveal 0.9s 1.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    @keyframes heroReveal { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: none; } }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,45,45,0.12);
+      border: 1px solid rgba(255,45,45,0.35);
+      color: var(--red);
+      font-family: var(--font-cond);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 2px;
+      margin-bottom: 24px;
+    }
+    .hero-badge .dot {
+      width: 7px; height: 7px;
+      background: var(--red);
+      border-radius: 50%;
+      animation: blink 1.2s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.2; } }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 9vw, 7.5rem);
+      line-height: 0.92;
+      letter-spacing: 0.02em;
+      margin-bottom: 28px;
+    }
+    .hero-title .line { display: block; overflow: hidden; }
+    .hero-title .line span {
+      display: block;
+      animation: lineUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    .hero-title .line:nth-child(1) span { animation-delay: 1.9s; }
+    .hero-title .line:nth-child(2) span { animation-delay: 2.0s; }
+    .hero-title .line:nth-child(3) span { animation-delay: 2.1s; color: var(--red); }
+    @keyframes lineUp { from { transform: translateY(110%); } to { transform: none; } }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 40px;
+      animation: fadeUp 0.7s 2.3s both;
+    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+
+    .hero-actions {
+      display: flex; gap: 16px; flex-wrap: wrap;
+      animation: fadeUp 0.7s 2.4s both;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--red);
+      color: #fff;
+      font-family: var(--font-cond);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background 0.2s, box-shadow 0.3s, transform 0.2s;
+    }
+    .btn-primary:hover {
+      background: var(--orange);
+      box-shadow: 0 0 36px var(--red-glow);
+      transform: translateY(-2px);
+    }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: transparent;
+      color: var(--text);
+      font-family: var(--font-cond);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      border-radius: 2px;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--red); color: var(--red); }
+
+    .hero-visual {
+      position: absolute;
+      right: 5vw; top: 50%;
+      transform: translateY(-50%);
+      width: min(420px, 40vw);
+      animation: heroVisualIn 1s 2s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    @keyframes heroVisualIn { from { opacity: 0; transform: translateY(-40%) scale(0.9); } to { opacity: 1; transform: translateY(-50%) scale(1); } }
+
+    .video-mockup {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,45,45,0.08);
+    }
+    .vm-header {
+      background: var(--surface);
+      padding: 10px 14px;
+      display: flex; align-items: center; gap: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .vm-dot { width: 9px; height: 9px; border-radius: 50%; }
+    .vm-dot:nth-child(1) { background: #ff5f57; }
+    .vm-dot:nth-child(2) { background: #febc2e; }
+    .vm-dot:nth-child(3) { background: #28c840; }
+    .vm-title-bar {
+      flex: 1;
+      background: var(--border);
+      height: 20px;
+      border-radius: 3px;
+      margin: 0 10px;
+      font-size: 0.6rem;
+      display: flex; align-items: center; padding: 0 10px;
+      color: var(--muted);
+      font-family: var(--font-body);
+    }
+    .vm-screen {
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .vm-play {
+      width: 56px; height: 56px;
+      background: var(--red);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      animation: playPulse 2s ease-in-out infinite;
+      cursor: pointer;
+      z-index: 2;
+    }
+    @keyframes playPulse {
+      0%,100% { box-shadow: 0 0 0 0 var(--red-glow); }
+      50% { box-shadow: 0 0 0 18px transparent; }
+    }
+    .vm-play svg { width: 22px; height: 22px; fill: #fff; margin-left: 4px; }
+    .vm-wave {
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(255,45,45,0.15) 0%, transparent 60%);
+      animation: wavePulse 3s ease-in-out infinite;
+    }
+    @keyframes wavePulse { 0%,100% { transform: scale(1); opacity: 0.6; } 50% { transform: scale(1.3); opacity: 1; } }
+    .vm-cards { padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+    .vm-card {
+      display: flex; gap: 10px; align-items: center;
+      padding: 8px;
+      background: var(--surface);
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      animation: cardSlideIn 0.5s both;
+    }
+    .vm-card:nth-child(1) { animation-delay: 2.3s; }
+    .vm-card:nth-child(2) { animation-delay: 2.5s; }
+    .vm-card:nth-child(3) { animation-delay: 2.7s; }
+    @keyframes cardSlideIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: none; } }
+    .vm-thumb {
+      width: 48px; height: 32px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+    .vm-card:nth-child(1) .vm-thumb { background: linear-gradient(135deg, #f72585, #7209b7); }
+    .vm-card:nth-child(2) .vm-thumb { background: linear-gradient(135deg, #4cc9f0, #4361ee); }
+    .vm-card:nth-child(3) .vm-thumb { background: linear-gradient(135deg, #f77f00, #fcbf49); }
+    .vm-info { flex: 1; }
+    .vm-info-title { font-size: 0.62rem; color: var(--text); font-weight: 600; margin-bottom: 3px; line-height: 1.3; }
+    .vm-info-meta { font-size: 0.55rem; color: var(--muted); }
+    .vm-badge {
+      font-size: 0.5rem;
+      font-family: var(--font-cond);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--red);
+      background: rgba(255,45,45,0.12);
+      padding: 2px 5px;
+      border-radius: 2px;
+    }
+
+    /* ── TICKER ── */
+    .ticker-wrap {
+      background: var(--red);
+      padding: 10px 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .ticker-label {
+      position: absolute; left: 0; top: 0; bottom: 0;
+      background: #000;
+      display: flex; align-items: center;
+      padding: 0 20px;
+      font-family: var(--font-cond);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--red);
+      z-index: 2;
+      white-space: nowrap;
+    }
+    .ticker-track {
+      display: flex;
+      animation: tickerMove 30s linear infinite;
+      padding-left: 130px;
+    }
+    .ticker-item {
+      white-space: nowrap;
+      padding: 0 48px;
+      font-family: var(--font-cond);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #fff;
+    }
+    .ticker-item::before {
+      content: '▶';
+      margin-right: 12px;
+      opacity: 0.7;
+      font-size: 0.6rem;
+    }
+    @keyframes tickerMove { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ── STATS ── */
+    .stats {
+      padding: 70px 5vw;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .stat-item {
+      background: var(--surface);
+      padding: 36px 32px;
+      text-align: center;
+      transition: background 0.3s;
+    }
+    .stat-item:hover { background: var(--card); }
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      color: var(--red);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-label {
+      font-family: var(--font-cond);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── SECTION HEADER ── */
+    .section-header {
+      display: flex; align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .section-tag {
+      font-family: var(--font-cond);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1;
+      letter-spacing: 0.02em;
+    }
+    .view-all {
+      font-family: var(--font-cond);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      text-decoration: none;
+      border-bottom: 1px solid var(--red);
+      padding-bottom: 2px;
+      transition: opacity 0.2s;
+      white-space: nowrap;
+    }
+    .view-all:hover { opacity: 0.7; }
+
+    /* ── TRENDING SECTION ── */
+    .trending { padding: 80px 5vw; }
+
+    .trending-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 16px;
+    }
+
+    .video-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      text-decoration: none;
+      color: var(--text);
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+      display: flex; flex-direction: column;
+    }
+    .video-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,45,45,0.4);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,45,45,0.15);
+    }
+    .video-card.featured {
+      grid-row: 1 / 3;
+    }
+
+    .card-thumb {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 16/9;
+    }
+    .video-card.featured .card-thumb { aspect-ratio: 4/5; }
+
+    .thumb-bg {
+      width: 100%; height: 100%;
+      transition: transform 0.5s ease;
+    }
+    .video-card:hover .thumb-bg { transform: scale(1.06); }
+
+    .thumb-bg-1 { background: linear-gradient(135deg, #1a0533 0%, #6b21a8 50%, #ec4899 100%); }
+    .thumb-bg-2 { background: linear-gradient(135deg, #0c1445 0%, #1e40af 50%, #06b6d4 100%); }
+    .thumb-bg-3 { background: linear-gradient(135deg, #1a0a00 0%, #c2410c 50%, #fbbf24 100%); }
+    .thumb-bg-4 { background: linear-gradient(135deg, #052e16 0%, #15803d 50%, #86efac 100%); }
+    .thumb-bg-5 { background: linear-gradient(135deg, #1e1b4b 0%, #7c3aed 50%, #f0abfc 100%); }
+
+    .thumb-overlay {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0.3);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .video-card:hover .thumb-overlay { opacity: 1; }
+    .play-btn {
+      width: 52px; height: 52px;
+      background: rgba(255,45,45,0.9);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      transform: scale(0.8);
+      transition: transform 0.3s;
+    }
+    .video-card:hover .play-btn { transform: scale(1); }
+    .play-btn svg { width: 18px; fill: #fff; margin-left: 3px; }
+
+    .card-category {
+      position: absolute; top: 12px; left: 12px;
+      font-family: var(--font-cond);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background: var(--red);
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 2px;
+    }
+    .card-views {
+      position: absolute; bottom: 10px; right: 10px;
+      font-family: var(--font-cond);
+      font-size: 0.65rem;
+      font-weight: 700;
+      background: rgba(0,0,0,0.75);
+      color: var(--text);
+      padding: 3px 8px;
+      border-radius: 2px;
+      backdrop-filter: blur(4px);
+    }
+
+    .card-body { padding: 16px; flex: 1; }
+    .card-title {
+      font-family: var(--font-cond);
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .video-card.featured .card-title { font-size: 1.3rem; }
+    .card-meta {
+      font-size: 0.72rem;
+      color: var(--muted);
+      display: flex; gap: 12px;
+    }
+
+    /* ── CATEGORIES ── */
+    .categories { padding: 80px 5vw; background: var(--surface); }
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+    }
+    .cat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 28px 20px;
+      text-align: center;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .cat-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--cat-color, var(--red));
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+    .cat-card:hover::after { transform: scaleX(1); }
+    .cat-card:hover {
+      border-color: var(--cat-color, var(--red));
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.3);
+    }
+    .cat-icon { font-size: 2rem; margin-bottom: 10px; display: block; }
+    .cat-name {
+      font-family: var(--font-cond);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .cat-count { font-size: 0.72rem; color: var(--muted); }
+
+    /* ── NEWSLETTER ── */
+    .newsletter {
+      padding: 100px 5vw;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .newsletter::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(255,45,45,0.08) 0%, transparent 70%);
+    }
+    .newsletter-inner { position: relative; max-width: 580px; margin: 0 auto; }
+    .newsletter-tag {
+      font-family: var(--font-cond);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 16px;
+    }
+    .newsletter-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1;
+      letter-spacing: 0.02em;
+      margin-bottom: 16px;
+    }
+    .newsletter-sub { color: var(--muted); margin-bottom: 36px; }
+    .newsletter-form {
+      display: flex; gap: 10px;
+      max-width: 460px; margin: 0 auto;
+    }
+    .newsletter-form input {
+      flex: 1;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      padding: 14px 18px;
+      border-radius: 2px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .newsletter-form input:focus { border-color: var(--red); }
+    .newsletter-form input::placeholder { color: var(--muted); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 60px 5vw 30px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+    .footer-brand-logo {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+    .footer-brand-logo span { color: var(--red); }
+    .footer-desc { color: var(--muted); font-size: 0.88rem; line-height: 1.7; margin-bottom: 20px; }
+    .footer-social { display: flex; gap: 10px; }
+    .social-btn {
+      width: 36px; height: 36px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+      font-family: var(--font-cond);
+      transition: all 0.2s;
+    }
+    .social-btn:hover { background: var(--red); border-color: var(--red); color: #fff; }
+
+    .footer-col h4 {
+      font-family: var(--font-cond);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+    .footer-col ul a:hover { color: var(--red); }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy { font-size: 0.8rem; color: var(--muted); }
+    .footer-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .footer-tags span {
+      font-size: 0.65rem;
+      font-family: var(--font-cond);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 3px 8px;
+      border-radius: 2px;
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-visual { display: none; }
+      .trending-grid { grid-template-columns: 1fr 1fr; }
+      .video-card.featured { grid-row: auto; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .trending-grid { grid-template-columns: 1fr; }
+      .newsletter-form { flex-direction: column; }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .hero { padding: 100px 5vw 50px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-logo">NEW<span>VIRAL</span>VIDEO</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Nav -->
+  <nav>
+    <a href="/" class="nav-logo">NEW<span>VIRAL</span>VIDEO</a>
+    <ul class="nav-links">
+      <li><a href="#trending">Trending</a></li>
+      <li><a href="#categories">Categories</a></li>
+      <li><a href="#latest">Latest</a></li>
+      <li><a href="#newsletter" class="nav-cta">Subscribe</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid-lines"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Live — Updated Daily
+      </div>
+      <h1 class="hero-title">
+        <span class="line"><span>TODAY'S</span></span>
+        <span class="line"><span>HOTTEST</span></span>
+        <span class="line"><span>VIRAL VIDEOS</span></span>
+      </h1>
+      <p class="hero-sub">
+        Your #1 destination for trending video clips, breaking video news and internet-defining moments — curated fresh every single day from around the world.
+      </p>
+      <div class="hero-actions">
+        <a href="#trending" class="btn-primary">
+          <svg width="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Watch Trending
+        </a>
+        <a href="#categories" class="btn-ghost">Browse Categories</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="video-mockup">
+        <div class="vm-header">
+          <span class="vm-dot"></span>
+          <span class="vm-dot"></span>
+          <span class="vm-dot"></span>
+          <div class="vm-title-bar">newviralvideo.eu.cc</div>
+        </div>
+        <div class="vm-screen">
+          <div class="vm-wave"></div>
+          <div class="vm-play">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="vm-cards">
+          <div class="vm-card">
+            <div class="vm-thumb"></div>
+            <div class="vm-info">
+              <div class="vm-info-title">Dog Rescues Drowning Cat — Unbelievable!</div>
+              <div class="vm-info-meta">4.2M views · 2 hours ago</div>
+            </div>
+            <div class="vm-badge">HOT</div>
+          </div>
+          <div class="vm-card">
+            <div class="vm-thumb"></div>
+            <div class="vm-info">
+              <div class="vm-info-title">Skydiver's GoPro Falls 15,000 Feet</div>
+              <div class="vm-info-meta">2.8M views · 5 hours ago</div>
+            </div>
+            <div class="vm-badge">NEW</div>
+          </div>
+          <div class="vm-card">
+            <div class="vm-thumb"></div>
+            <div class="vm-info">
+              <div class="vm-info-title">Street Performer Stuns NYC Crowd</div>
+              <div class="vm-info-meta">1.5M views · 8 hours ago</div>
+            </div>
+            <div class="vm-badge">VIRAL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ticker -->
+  <div class="ticker-wrap" aria-label="Trending now">
+    <div class="ticker-label">🔴 TRENDING</div>
+    <div class="ticker-track">
+      <span class="ticker-item">Dog saves drowning kitten — 4.2M views</span>
+      <span class="ticker-item">Skydiver GoPro falls 15,000 feet</span>
+      <span class="ticker-item">Street magician fools Penn & Teller</span>
+      <span class="ticker-item">Lightning strikes twice in 10 seconds</span>
+      <span class="ticker-item">Baby's first steps goes viral globally</span>
+      <span class="ticker-item">Parkour athlete sets world record</span>
+      <span class="ticker-item">Tsunami caught on camera in Japan</span>
+      <span class="ticker-item">Dog saves drowning kitten — 4.2M views</span>
+      <span class="ticker-item">Skydiver GoPro falls 15,000 feet</span>
+      <span class="ticker-item">Street magician fools Penn & Teller</span>
+      <span class="ticker-item">Lightning strikes twice in 10 seconds</span>
+      <span class="ticker-item">Baby's first steps goes viral globally</span>
+      <span class="ticker-item">Parkour athlete sets world record</span>
+      <span class="ticker-item">Tsunami caught on camera in Japan</span>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats" aria-label="Site statistics">
+    <div class="stat-item reveal">
+      <div class="stat-number" data-target="12">0</div>
+      <div class="stat-label">Million Monthly Visitors</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-number" data-target="500">0</div>
+      <div class="stat-label">New Videos Daily</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-number" data-target="48">0</div>
+      <div class="stat-label">Content Categories</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-number" data-target="190">0</div>
+      <div class="stat-label">Countries Covered</div>
+    </div>
+  </div>
+
+  <!-- Trending Videos -->
+  <section class="trending" id="trending" aria-labelledby="trending-heading">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-tag">🔥 On Fire Right Now</div>
+        <h2 class="section-title" id="trending-heading">TRENDING VIDEOS</h2>
+      </div>
+      <a href="#" class="view-all">View All →</a>
+    </div>
+    <div class="trending-grid">
+      <!-- Featured -->
+      <a href="#" class="video-card featured reveal">
+        <div class="card-thumb">
+          <div class="thumb-bg thumb-bg-1"></div>
+          <div class="thumb-overlay"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+          <span class="card-category">Nature</span>
+          <span class="card-views">👁 8.4M</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Rare Pink Dolphin Pod Spotted Off The Coast of Louisiana — Breathtaking Footage Stuns Wildlife Experts</h3>
+          <div class="card-meta"><span>🕐 3 hours ago</span><span>🔥 #1 Trending</span></div>
+        </div>
+      </a>
+      <!-- Card 2 -->
+      <a href="#" class="video-card reveal">
+        <div class="card-thumb">
+          <div class="thumb-bg thumb-bg-2"></div>
+          <div class="thumb-overlay"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+          <span class="card-category">Sports</span>
+          <span class="card-views">👁 3.1M</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Goalkeeper Scores From His Own Box in Final Minute — Crowd Goes Crazy</h3>
+          <div class="card-meta"><span>🕐 1 hour ago</span><span>⚡ Breaking</span></div>
+        </div>
+      </a>
+      <!-- Card 3 -->
+      <a href="#" class="video-card reveal">
+        <div class="card-thumb">
+          <div class="thumb-bg thumb-bg-3"></div>
+          <div class="thumb-overlay"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+          <span class="card-category">Tech</span>
+          <span class="card-views">👁 2.7M</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Robot Dog Climbs Stairs Faster Than Humans and the Internet Can't Handle It</h3>
+          <div class="card-meta"><span>🕐 5 hours ago</span><span>🤖 Viral</span></div>
+        </div>
+      </a>
+      <!-- Card 4 -->
+      <a href="#" class="video-card reveal">
+        <div class="card-thumb">
+          <div class="thumb-bg thumb-bg-4"></div>
+          <div class="thumb-overlay"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+          <span class="card-category">Animals</span>
+          <span class="card-views">👁 5.9M</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Bear Walks Into Bakery and Politely Waits in Line — Staff Too Shocked to React</h3>
+          <div class="card-meta"><span>🕐 7 hours ago</span><span>😂 Funny</span></div>
+        </div>
+      </a>
+      <!-- Card 5 -->
+      <a href="#" class="video-card reveal">
+        <div class="card-thumb">
+          <div class="thumb-bg thumb-bg-5"></div>
+          <div class="thumb-overlay"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+          <span class="card-category">Music</span>
+          <span class="card-views">👁 4.4M</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Busker's Surprise Opera Performance Stops New York City Traffic Dead</h3>
+          <div class="card-meta"><span>🕐 9 hours ago</span><span>🎵 Viral</span></div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories" id="categories" aria-labelledby="cat-heading">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-tag">📂 Explore</div>
+        <h2 class="section-title" id="cat-heading">BROWSE BY CATEGORY</h2>
+      </div>
+    </div>
+    <div class="cat-grid">
+      <a href="#" class="cat-card reveal" style="--cat-color:#ff2d2d"><span class="cat-icon">🔥</span><div class="cat-name">Trending</div><div class="cat-count">1,240 videos</div></a>
+      <a href="#" class="cat-card reveal" style="--cat-color:#f97316"><span class="cat-icon">🐾</span><div class="cat-name">Animals</div><div class="cat-count">890 videos</div></a>
+      <a href="#" class="cat-card reveal" style="--cat-color:#eab308"><span class="cat-icon">⚽</span><div class="cat-name">Sports</div><div class="cat-count">670 videos</div></a>
+      <a href="#" class="cat-card reveal" style="--cat-color:#22c55e"><span class="cat-icon">🌍</span><div class="cat-name">News</div><div class="cat-count">540 videos</div></a>
+      <a href="#" class="cat-card reveal" style="--cat-color:#06b6d4"><span class="cat-icon">🤖</span><div class="cat-name">Technology</div><div class="cat-count">480 videos</div></a>
+      <a href="#" class="cat-card reveal" style="--cat-color:#8b5cf6"><span class="cat-icon">🎵</span><div class="cat-name">Music</div><div class="cat-count">420 videos</div></a>
+      <a href="#" class="cat-card reveal" style="--cat-color:#ec4899"><span class="cat-icon">😂</span><div class="cat-name">Funny</div><div class="cat-count">950 videos</div></a>
+      <a href="#" class="cat-card reveal" style="--cat-color:#14b8a6"><span class="cat-icon">🌿</span><div class="cat-name">Nature</div><div class="cat-count">360 videos</div></a>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter" id="newsletter" aria-labelledby="nl-heading">
+    <div class="newsletter-inner reveal">
+      <div class="newsletter-tag">📬 Never Miss a Viral Moment</div>
+      <h2 class="newsletter-title" id="nl-heading">GET DAILY VIRAL ALERTS</h2>
+      <p class="newsletter-sub">Join over 500,000 subscribers who get the day's hottest trending videos delivered directly to their inbox every morning.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Enter your email address" aria-label="Email address" />
+        <a href="#" class="btn-primary" style="white-space:nowrap">Subscribe</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-logo">NEW<span>VIRAL</span>VIDEO</div>
+        <p class="footer-desc">Your daily source for the internet's most trending videos, viral clips and breaking video news from every corner of the world.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" aria-label="YouTube">YT</a>
+          <a href="#" class="social-btn" aria-label="Twitter">TW</a>
+          <a href="#" class="social-btn" aria-label="Facebook">FB</a>
+          <a href="#" class="social-btn" aria-label="Instagram">IG</a>
+          <a href="#" class="social-btn" aria-label="Telegram">TG</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Browse</h4>
+        <ul>
+          <li><a href="#">Trending Today</a></li>
+          <li><a href="#">Most Viewed</a></li>
+          <li><a href="#">Breaking News</a></li>
+          <li><a href="#">Editor's Picks</a></li>
+          <li><a href="#">All Categories</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Topics</h4>
+        <ul>
+          <li><a href="#">Animals & Pets</a></li>
+          <li><a href="#">Sports Highlights</a></li>
+          <li><a href="#">Tech & Science</a></li>
+          <li><a href="#">Music & Entertainment</a></li>
+          <li><a href="#">Funny & Fails</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Submit a Video</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 NewViralVideo. All rights reserved. | newviralvideo.eu.cc</div>
+      <div class="footer-tags">
+        <span>viral videos</span>
+        <span>trending clips</span>
+        <span>video news</span>
+        <span>funny videos</span>
+        <span>breaking news</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── LOADER ──
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loader').classList.add('hide');
+      }, 1500);
+    });
+
+    // ── CUSTOM CURSOR ──
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursorRing');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      cursor.style.left = mx + 'px';
+      cursor.style.top = my + 'px';
+    });
+
+    function animateRing() {
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      ring.style.left = rx + 'px';
+      ring.style.top = ry + 'px';
+      requestAnimationFrame(animateRing);
+    }
+    animateRing();
+
+    document.querySelectorAll('a, button, .cat-card, .video-card').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.style.width = '20px';
+        cursor.style.height = '20px';
+        ring.style.borderColor = 'var(--orange)';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.style.width = '12px';
+        cursor.style.height = '12px';
+        ring.style.borderColor = 'var(--red)';
+      });
+    });
+
+    // ── SCROLL REVEAL ──
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // ── COUNTER ANIMATION ──
+    function animateCounter(el, target) {
+      let current = 0;
+      const step = target / 60;
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) { current = target; clearInterval(timer); }
+        el.textContent = Math.floor(current) + (target >= 100 ? '+' : 'M+');
+      }, 25);
+    }
+
+    const counterObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target.querySelector('.stat-number');
+          if (el) animateCounter(el, parseInt(el.dataset.target));
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.stat-item').forEach(el => counterObserver.observe(el));
+
+    // ── NAV SCROLL EFFECT ──
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      nav.style.background = window.scrollY > 40
+        ? 'rgba(10,10,12,0.95)'
+        : 'rgba(10,10,12,0.7)';
+    });
+  </script>
+</body>
+</html>
