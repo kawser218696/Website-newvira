@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://newviralvideo.eu.cc/sitemap.xml
+Sitemap: https://devnotes.me/sitemap.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 5
